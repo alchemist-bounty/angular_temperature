@@ -17,11 +17,13 @@ export class TemperatureConverter implements OnInit {
   celsiusChange(value: any) {
     this.Celsius = value;
     this.Fahrenheit = (parseFloat(this.Celsius) * 9 / 5 +32).toFixed(1);
+    this.Fahrenheit = (parseFloat(this.Fahrenheit)).toString();
   }
 
   fahrenheitChange(value: any) {
     this.Fahrenheit = value;
     this.Celsius = ((parseFloat(this.Fahrenheit)-32) * 5 / 9).toFixed(1);
+    this.Celsius = (parseFloat(this.Celsius)).toString();
   }
 
 }
