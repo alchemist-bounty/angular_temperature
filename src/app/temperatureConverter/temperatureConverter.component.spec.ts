@@ -7,11 +7,11 @@ import {CUSTOM_ELEMENTS_SCHEMA} from "@angular/core";
 describe('TemperatureConverter', () => {
   let component: TemperatureConverter;
   let fixture: ComponentFixture<TemperatureConverter>;
-  let compiled;
-  let celsiusInput;
-  let fahrenheitInput;
+  let compiled: any;
+  let celsiusInput: any;
+  let fahrenheitInput: any;
 
-  const pushCelsiusValue = async (value) => {
+  const pushCelsiusValue = async (value: any) => {
     celsiusInput.value = value;
     celsiusInput.dispatchEvent(new Event('change'));
     celsiusInput.dispatchEvent(new Event('input'));
@@ -19,7 +19,7 @@ describe('TemperatureConverter', () => {
     await fixture.detectChanges();
   };
 
-  const pushFahrenheitValue = async (value) => {
+  const pushFahrenheitValue = async (value: any) => {
     fahrenheitInput.value = value;
     fahrenheitInput.dispatchEvent(new Event('change'));
     fahrenheitInput.dispatchEvent(new Event('input'));
