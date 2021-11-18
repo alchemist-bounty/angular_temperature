@@ -1,18 +1,31 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+
+import { TemperatureConverter } from './temperatureConverter/temperatureConverter.component';
+import { RouterModule } from '@angular/router';
+import {RouterTestingModule} from '@angular/router/testing';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TemperatureConverter
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    RouterTestingModule,
+    RouterModule.forRoot([
+      { path:'', component: TemperatureConverter }
+    ])
+  ],
+  exports: [
+    RouterModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas : [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
